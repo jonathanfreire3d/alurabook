@@ -1,0 +1,125 @@
+.cabeçalho__menu-hamburger {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/Menu.svg);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabeçalho__menu-hamburger {
+    background-image: url(../img/Menu_Aberto.svg)
+}
+
+.container__botao:checked ~ .container__rotulo {
+    background : var(--azul-degrade);
+}
+.cabeçalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative; /* permite colocar elementos em posições, top, botton etc..*/
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute; /* permite que eu movimente meu elemento sobre o pai, que tenha position diferente de static */
+    top: 100%; 
+    width: 60vw; /* VW é view port width  lagura da viuw port*/
+}
+
+
+.container__botao:checked ~ .lista-menu {
+    display: block;
+}
+
+.lista-menu__titulo, .lista-menu__itens {
+    padding: 1em;
+    background-color: var(--branco);
+
+}
+.lista-menu__titulo {
+    color: var(--laranja);
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.lista-menu__link {
+    text-decoration: none;
+}
+
+.lista-menu__link {
+    background: var(--azul-degrade);
+    -webkit-background-clip: text; /* webkit é para funcionar em outros navegadores */
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* aplicar cor de backgound apenas onde tem texto */
+    text-transform: uppercase; /* deixa o texto maiusculo */
+}
+.container__botao {
+    display: none; /*remove a imagem de checked do botao */
+}
+
+.container__titulo, .opçoes  {
+    display: none; /* 01 - tira i titulo , fica invisively */
+}
+
+
+@media screen and (min-width: 1024px) {
+    .container__titulo, .container__titulo--negrito {
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+    .container__titulo {
+        font-weight: 400;
+        display: block; /* 01 - reexime na medida incidaca */
+    }
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+    .opçoes {
+        display: flex;
+    }
+    .opçoes__item {
+        padding: 1em;
+        text-transform: uppercase; /* deixa maiusculos */
+    }
+    .opçoes__link {
+        text-decoration: none;
+        color: var(--preto);
+    }
+    .container__imagem-transparente, .cabeçalho__menu-hamburger {
+        display: none;
+    }
+    .opçoes__botao:checked ~ .lista-menu {
+        display: block;
+        width: auto;
+    }
+    .opçoes__botao {
+        display: none;
+    }
+    .opçoes__botao:checked ~ .opçoes__rotulo > .opçoes__item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+    .lista-menu__itens:hover {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .lista-menu__itens:hover > .lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+        
+}

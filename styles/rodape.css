@@ -1,0 +1,54 @@
+hr {
+    margin: 0;
+}
+
+.rodape {
+    background-color: var(--fundo-rodape);
+    padding: 1em;
+}
+.rodape-lista {
+    display: none; /* 01-oculta o bloco o bloco da liasta */
+}
+@media screen and (min-width: 1024px) {
+    .rodape {
+        display: flex;
+        padding: 3em 0;
+        justify-content: space-around; /* justifica pegando distrubui o espaço que sobra entre os itens */
+        }
+    .rodape__titulo {
+        font-size: 36px;
+        width: 400;
+        color: var(--preto);
+   
+    }
+    .rodape-lista {
+        display: block; /* 01-exibe como ja era um blocom, só repetismos para exibir */
+    }
+    .rodape-lista__titulo {
+        font-size: 14px;
+        width: 400;
+        color: var(--cinza-titulo);
+    
+    }
+    .rodape-lista__item {
+        padding-top: 1em;
+        display:flex; /*foi usado pra alinha a imagem com o texto da imagem */
+        align-items: center; /*foi usado pra alinha a imagem com o texto da imagem */
+    
+    }
+    .rodape-lista__link {
+        padding-left: 1em;
+        text-decoration: none;
+        color: var(--cinza-texto);
+    }
+}
+
+@media screen and (min-width: 1728px){
+    .rodape-lista{
+        border-left: 1px solid var(--cinza-texto);
+        padding: 0 1em;
+    }
+    .rodape {
+        padding: 4em 0;
+    }
+}
